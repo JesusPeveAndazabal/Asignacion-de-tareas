@@ -18,6 +18,11 @@
           <input type="text" class="form-control"  name="title">
         </div>
 
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Encargado de la tarea</label>
+          <input type="text" class="form-control"  name="encargado">
+        </div>
+
         <label for="category_id" class="form-label">Categoria de la tarea</label>
         <select name="category_id" class="form-select">
           @foreach ($categories as $category)
@@ -33,7 +38,7 @@
           @foreach ($todos as $todo)
               <div class="row py-1">
                   <div class="col-md-9 d-flex align-items-center">
-                      <a href="{{ route('todos-edit', ['id' => $todo->id]) }}">{{ $todo->title }}</a>
+                      <a href="{{ route('todos-edit', ['id' => $todo->id]) }}">{{ $todo->title }} - {{ $todo->encargado }}  </a>
                   </div>
 
                   <div class="col-md-3 d-flex justify-content-end">

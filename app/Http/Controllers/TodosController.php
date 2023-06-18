@@ -22,6 +22,7 @@ class TodosController extends Controller
 
         $todo = new Todo; 
         $todo->title = $request->title;
+        $todo->encargado=$request->encargado;
         $todo->category_id = $request->category_id;
         $todo->save();
 
@@ -42,6 +43,7 @@ class TodosController extends Controller
     public function update(Request $request, $id){
         $todo = Todo::find($id);
         $todo->title = $request->title;
+        $todo->encargado = $request->encargado;
         $todo->save();
 
         /* return view('todos.index', ['success' => 'Tarea actualizada']); */
